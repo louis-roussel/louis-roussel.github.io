@@ -1,4 +1,4 @@
-const url_hal = "http://api.archives-ouvertes.fr/search/?q=authIdHal_s:louis-roussel&fl=files_s,authFullName_s,label_s,title_s,label_bibtex,docType_s,publisher_s,citationRef_s,halId_s,releasedDateY_i,releasedDate_tdate&wt=json&sort=releasedDate_tdate desc";
+const url_hal = "http://api.archives-ouvertes.fr/search/?q=authIdHal_s:louis-roussel&fl=fileMain_s,authFullName_s,title_s,docType_s,publisher_s,citationRef_s,halId_s,releasedDateY_i,releasedDate_tdate&wt=json&sort=releasedDate_tdate desc";
 
 
 async function getData(url) {
@@ -49,13 +49,11 @@ async function create_publications_div() {
     const all_data_hal = await getData(url_hal);  
     const all_pubs =all_data_hal.response.docs 
     const all_pubs_grouped = group_pubs_by_year_type(all_pubs) 
-    console.log(all_pubs_grouped)
-    
+     
     all_pubs_grouped.forEach(e => {
         let year = e[0];
         let pubs_per_year = e[1];
-        console.log(year);
-        console.log(pubs_per_year);
+         
         let div_year = $('<div class="pubs_year_div"></div>');
         div_year.append('<div class="pubs_year">'+year+'</div>');
         for (const[type, pubs_per_type] of Object.entries(pubs_per_year)) { 
@@ -63,14 +61,13 @@ async function create_publications_div() {
             div_type.append('<div class="pubs_type">'+type+'</div>');
             pubs_per_type.forEach(pub => {
                 let div_pub = $('<div class="pub"></div>');
-                console.log(pub.halId_s )
-                div_pub.append('<a href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')
+                 div_pub.append('<a href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')
                 div_pub.append('<p class=authors>'+pub.authFullName_s.join(", ")+'</p>')
                 div_pub.append('<p class=cite_refs>'+pub.citationRef_s+'</p>')
-                // div_pub.append("<pre>"+JSON.stringify(pub,null,'\t')+"</pre>");  
+                div_pub.append('<a href="'+pub.fileMain_s+'"><img src="img/Haltools_pdf.png"></img></a>')
+                div_pub.append('<a href="https://hal.science/'+ pub.halId_s +'/bibtex"><img src="img/Haltools_bibtex3.png"></img></a>')
                 div_type.append(div_pub)
-                // $("#pubs").append("<pre>"+JSON.stringify(pub,null,'\t')+"</pre>");  
-            });  
+             });  
             div_year.append(div_type)
         } 
         $("#pubs").append(div_year)

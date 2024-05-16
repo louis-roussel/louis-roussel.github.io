@@ -1,9 +1,10 @@
 .pub{
-    background-color: red;
+    background-color: rgb(193, 193, 193);
     margin-left: 1em;
+    margin-bottom: 1em;
     margin-right: 1em;
 }
 
 .pubs_year_div{
-    background-color: gray;
+    background-color: rgb(243, 243, 243);
 }
