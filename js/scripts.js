@@ -1,4 +1,4 @@
-const url_hal = "http://api.archives-ouvertes.fr/search/?q=authIdHal_s:louis-roussel&fl=files_s,label_s,label_bibtex,docType_s,releasedDateY_i,releasedDate_tdate&wt=json&sort=releasedDate_tdate desc";
+const url_hal = "https://api.archives-ouvertes.fr/search/?q=authIdHal_s:louis-roussel&fl=files_s,label_s,label_bibtex,docType_s,releasedDateY_i,releasedDate_tdate&wt=json&sort=releasedDate_tdate desc";
 
 
 async function getData(url) {
