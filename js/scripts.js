@@ -1,4 +1,4 @@
-const url_hal = "https://api.archives-ouvertes.fr/search/?q=authIdHal_s:louis-roussel&fl=fileMain_s,authFullName_s,title_s,docType_s,publisher_s,citationRef_s,halId_s,releasedDateY_i,releasedDate_tdate&wt=json&sort=releasedDate_tdate desc";
+const url_hal = "https://api.archives-ouvertes.fr/search/?q=authIdHal_s:louis-roussel&fl=fileMain_s,authFullName_s,title_s,docType_s,publisher_s,citationRef_s,halId_s,releasedDateY_i,producedDateY_i,releasedDate_tdate&wt=json&sort=releasedDate_tdate desc";
 
 
 async function getData(url) {
@@ -24,7 +24,7 @@ function group_pubs_by_filter(pubs,filter){
 
 // pubs is a list
 function group_pubs_by_year(pubs){
-    return group_pubs_by_filter(pubs, "releasedDateY_i")
+    return group_pubs_by_filter(pubs, "producedDateY_i")
 }
 function group_pubs_by_type(pubs){
     return group_pubs_by_filter(pubs, "docType_s")
@@ -71,6 +71,7 @@ async function create_publications_div() {
             div_year.append(div_type)
         } 
         $("#pubs").append(div_year)
+        // $("#pubs").append("<pre>"+JSON.stringify(all_pubs,null,'\t')+"</pre>");
     });  
 }
 
