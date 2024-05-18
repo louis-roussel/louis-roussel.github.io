@@ -1,3 +1,5 @@
+
+  
 const url_hal = "https://api.archives-ouvertes.fr/search/?q=authIdHal_s:louis-roussel&fl=fileMain_s,authFullName_s,title_s,docType_s,publisher_s,citationRef_s,halId_s,releasedDateY_i,releasedDate_tdate&wt=json&sort=releasedDate_tdate desc";
 
 
@@ -6,28 +8,12 @@ async function getData(url) {
     return response.json();
 }
 
-
-
-// pubs is a list
-function group_pubs_by_filter(pubs,filter){
-    let res = {};
-    pubs.forEach(p => {
-        const key = p[filter]; 
-        if (!(key in res)) {
-            res[key] = [];
-        }; 
-        res[key].push(p);       
-    });
-    return res;
-}
-
-
 // pubs is a list
 function group_pubs_by_year(pubs){
-    return group_pubs_by_filter(pubs, "releasedDateY_i")
+    return group_list_by_filter(pubs, "releasedDateY_i")
 }
 function group_pubs_by_type(pubs){
-    return group_pubs_by_filter(pubs, "docType_s")
+    return group_list_by_filter(pubs, "docType_s")
 }
 
 function group_pubs_by_year_type(pubs){
