@@ -1,6 +1,7 @@
 
 body{
     display: grid;
+    font-size:1.2em !important;
     justify-content: center; 
 }
 
