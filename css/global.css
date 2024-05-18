@@ -1,6 +1,26 @@
 
+body{
+    display: grid;
+    justify-content: center; 
+}
 
 #main{
-    display: grid;
-    justify-content: center;
+    margin-top: 5em;
+    margin-bottom: 5em;
+    margin-left: 5em;
+    margin-right: 5em;
+    width: 70vw;
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    body { padding-top: 0px; }
+
+    #main{
+        width: 90vw;
+    }
 }
