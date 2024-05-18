@@ -1,23 +1,22 @@
 
-.pub{
+.comm{
     /* background-color: rgb(193, 193, 193); */
     margin-left: 1em;
     margin-bottom: 1em;
     margin-right: 1em;
     padding: 1em;    
 }
- 
-.pub p{
+
+
+.comm p{
     margin: 0;
 }
 
-.pubs_year_div{
-    /* background-color: rgb(243, 243, 243); */ 
-    width: 50vw;
+.comm_where, .comm_conf_name{
+    font-style: italic;
 }
 
-
-#main{
-    display: grid;
-    justify-content: center;
+.comms_year_div{
+    /* background-color: rgb(243, 243, 243); */ 
+    width: 50vw;
 }

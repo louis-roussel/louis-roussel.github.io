@@ -20,13 +20,8 @@ function group_pubs_by_year_type(pubs){
     let res = group_pubs_by_year(pubs); 
     for (const[key, value] of Object.entries(res)) { 
         res[key] = group_pubs_by_type(value) 
-    } 
-    const keys = Object.keys(res);
-    keys.sort((a, b) => b - a); 
-    const sorted_res = [];
-    keys.forEach(key => {
-        sorted_res.push([key, res[key]]) 
-    }); 
+    }  
+    const sorted_res = dict_to_sorted_list_by_key_value(res); 
     return sorted_res;
 }
 
@@ -48,7 +43,7 @@ async function create_publications_div() {
     const all_data_hal = await getData(url_hal);  
     const all_pubs =all_data_hal.response.docs 
     const all_pubs_grouped = group_pubs_by_year_type(all_pubs) 
-     
+    console.log(all_pubs_grouped)
     all_pubs_grouped.forEach(e => {
         let year = e[0];
         let pubs_per_year = e[1];
@@ -60,7 +55,7 @@ async function create_publications_div() {
             div_type.append('<h5 class="pubs_type">'+map_type_hal_to_str(type)+'</h5>');
             pubs_per_type.forEach(pub => {
                 let div_pub = $('<div class="pub card"></div>');
-                div_pub.append('<a href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')
+                div_pub.append('<a class="pub_title" href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')
                 div_pub.append('<p class=authors>'+pub.authFullName_s.join(", ")+'</p>')
                 div_pub.append('<p class=cite_refs>'+pub.citationRef_s+'</p>')
                 const link_pdf = '<a href="'+pub.fileMain_s+'"><img src="img/Haltools_pdf.png"></img></a>'
