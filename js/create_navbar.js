@@ -44,7 +44,7 @@ let navbar = `
       <a class="nav-link" href="#comms">Communications</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#enseignements">Enseignements</a>
+      <a class="nav-link" href="#enseignements">Teaching</a>
     </li> 
   </ul>
   </div>
