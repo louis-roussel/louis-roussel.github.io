@@ -25,7 +25,7 @@ async function create_communications_div() {
     const all_comms_sorted = sort_list_of_comms_by_date(all_comms)
     const comms_by_year_sorted = group_comms_by_year(all_comms_sorted)
   
-    // $("#comms").append("<pre>"+JSON.stringify(comms_by_year_sorted,null,'\t')+"</pre>");  
+    // $("#communications").append("<pre>"+JSON.stringify(comms_by_year_sorted,null,'\t')+"</pre>");  
 
     comms_by_year_sorted.forEach(e => {
         let year = e[0];
@@ -47,7 +47,7 @@ async function create_communications_div() {
             div_year.append(div_comm);
         });
 
-        $("#comms").append(div_year);
+        $("#communications").append(div_year);
     });
 
 }

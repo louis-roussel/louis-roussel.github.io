@@ -65,7 +65,7 @@ async function create_publications_div() {
              });  
             div_year.append(div_type)
         } 
-        $("#pubs").append(div_year)
+        $("#publications").append(div_year)
     });  
 }
 

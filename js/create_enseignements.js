@@ -14,7 +14,7 @@ function group_enseign_by_year(comms){
 async function create_enseignements_div() { 
     const enseign_by_year_sorted = group_enseign_by_year(all_enseignements);
   
-    // $("#enseignements").append("<pre>"+JSON.stringify(enseign_by_year_sorted,null,'\t')+"</pre>");  
+    // $("#teaching").append("<pre>"+JSON.stringify(enseign_by_year_sorted,null,'\t')+"</pre>");  
 
     enseign_by_year_sorted.forEach(e => {
         let year = e[0];
@@ -41,7 +41,7 @@ async function create_enseignements_div() {
             div_year.append(div_enseign);
         });
 
-        $("#enseignements").append(div_year);
+        $("#teaching").append(div_year);
     });
 
 }

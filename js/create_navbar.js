@@ -13,10 +13,10 @@
 //                     <a class="nav-link active" aria-current="page" href="#">Home</a>
 //                 </li>
 //                 <li class="nav-item">
-//                     <a class="nav-link" href="#pubs">Publications</a>
+//                     <a class="nav-link" href="#publications">Publications</a>
 //                 </li>
 //                 <li class="nav-item">
-//                     <a class="nav-link" href="#comms">Communications</a>
+//                     <a class="nav-link" href="#communications">Communications</a>
 //                 </li>
 //                 <li class="nav-item">
 //                     <a class="nav-link" href="#">Enseignement</a>
@@ -35,16 +35,16 @@ let navbar = `
     <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
-  <a class="navbar-brand" href="#accueil">Home</a>
+  <a class="navbar-brand" href="#home">Home</a>
   <ul class="nav nav-pills">
     <li class="nav-item">
-      <a class="nav-link" href="#pubs">Publications</a>
+      <a class="nav-link" href="#publications">Publications</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#comms">Communications</a>
+      <a class="nav-link" href="#communications">Communications</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#enseignements">Teaching</a>
+      <a class="nav-link" href="#teaching">Teaching</a>
     </li> 
   </ul>
   </div>
