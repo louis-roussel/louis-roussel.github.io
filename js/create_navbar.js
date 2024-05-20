@@ -35,7 +35,7 @@ let navbar = `
     <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarNav">
-  <a class="navbar-brand" href="#accueil">Accueil</a>
+  <a class="navbar-brand" href="#accueil">Home</a>
   <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" href="#pubs">Publications</a>
