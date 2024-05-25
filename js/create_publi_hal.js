@@ -39,7 +39,18 @@ function map_type_hal_to_str(type){
     } 
 }
 
-async function create_publications_div() {
+function create_publi(pub){
+    let div_pub = $('<div class="pub card"></div>');
+    div_pub.append('<a class="pub_title" href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')
+    div_pub.append('<p class=authors>'+pub.authFullName_s.join(", ")+'</p>')
+    div_pub.append('<p class=cite_refs>'+pub.citationRef_s+'</p>')
+    const link_pdf = '<a href="'+pub.fileMain_s+'"><img src="img/Haltools_pdf.png"></img></a>'
+    const link_bib = '<a href="https://hal.science/'+ pub.halId_s +'/bibtex"><img src="img/Haltools_bibtex3.png"></img></a>'
+    div_pub.append('<div class="links">'+ link_pdf+ link_bib +'</div>') 
+    return div_pub;
+}
+
+async function create_publications_div_year_and_type() {
     const all_data_hal = await getData(url_hal);  
     const all_pubs =all_data_hal.response.docs 
     const all_pubs_grouped = group_pubs_by_year_type(all_pubs) 
@@ -54,13 +65,7 @@ async function create_publications_div() {
             let div_type = $('<div class="pubs_type_div"></div>');
             div_type.append('<h6 class="pubs_type">'+map_type_hal_to_str(type)+'</h6>');
             pubs_per_type.forEach(pub => {
-                let div_pub = $('<div class="pub card"></div>');
-                div_pub.append('<a class="pub_title" href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')
-                div_pub.append('<p class=authors>'+pub.authFullName_s.join(", ")+'</p>')
-                div_pub.append('<p class=cite_refs>'+pub.citationRef_s+'</p>')
-                const link_pdf = '<a href="'+pub.fileMain_s+'"><img src="img/Haltools_pdf.png"></img></a>'
-                const link_bib = '<a href="https://hal.science/'+ pub.halId_s +'/bibtex"><img src="img/Haltools_bibtex3.png"></img></a>'
-                div_pub.append('<div class="links">'+ link_pdf+ link_bib +'</div>') 
+                let div_pub = create_publi(pub)
                 div_type.append(div_pub)
              });  
             div_year.append(div_type)
@@ -68,6 +73,24 @@ async function create_publications_div() {
         $("#publications").append(div_year)
     });  
 }
+async function create_publications_div_type() {
+    const all_data_hal = await getData(url_hal);  
+    const all_pubs =all_data_hal.response.docs 
+    let all_pubs_grouped = group_pubs_by_type(all_pubs) 
+     
+    let loop_on = ['UNDEFINED','COMM','POSTER']
+    loop_on.forEach(type => {
+        let pubs_per_type = all_pubs_grouped[type];
+        let div_type = $('<div class="pubs_type_div"></div>');
+        div_type.append('<h6 class="pubs_type">'+map_type_hal_to_str(type)+'</h6>');
+        pubs_per_type.forEach(pub => {
+            let div_pub = create_publi(pub)
+            div_type.append(div_pub)
+            });  
+        $("#publications").append(div_type)
+    });     
+}
 
 // Call the async function to fetch and log the data
-create_publications_div();
+// create_publications_div_year_and_type();
+create_publications_div_type();

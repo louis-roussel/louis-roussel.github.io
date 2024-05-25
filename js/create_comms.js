@@ -19,6 +19,19 @@ function group_comms_by_year(comms){
 }
 
 
+function create_comm_div(comm){
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const date = new Date(comm.when.start)
+    const formatted_date = date.toLocaleDateString("en-US", options);
+
+    let div_comm = $('<div class="comm card"></div>');
+
+    div_comm.append('<p class = "comm_title">'+ comm.title +'</p>');
+    div_comm.append('<p class = "comm_conf_name">'+ comm.conf_name +'</p>'); 
+    div_comm.append('<p class = "comm_where">'+ comm.where +'</p>'); 
+    div_comm.append('<p class = "comm_where">'+ formatted_date +'</p>');
+    return div_comm
+}
 
 
 async function create_communications_div() {
@@ -34,16 +47,7 @@ async function create_communications_div() {
         div_year.append('<h3 class="comms_year">'+year+'</h3>');
 
         comms_per_year.forEach(comm => {
-            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            const date = new Date(comm.when.start)
-            const formatted_date = date.toLocaleDateString("en-US", options);
-
-            let div_comm = $('<div class="comm card"></div>');
-        
-            div_comm.append('<p class = "comm_title">'+ comm.title +'</p>');
-            div_comm.append('<p class = "comm_conf_name">'+ comm.conf_name +'</p>'); 
-            div_comm.append('<p class = "comm_where">'+ comm.where +'</p>'); 
-            div_comm.append('<p class = "comm_where">'+ formatted_date +'</p>');
+            let div_comm = create_comm_div(comm)
             div_year.append(div_comm);
         });
 
