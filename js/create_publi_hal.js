@@ -49,10 +49,10 @@ async function create_publications_div() {
         let pubs_per_year = e[1];
          
         let div_year = $('<div class="pubs_year_div"></div>');
-        div_year.append('<h3 class="pubs_year">'+year+'</h3>');
+        div_year.append('<h5 class="pubs_year">'+year+'</h5>');
         for (const[type, pubs_per_type] of Object.entries(pubs_per_year)) { 
             let div_type = $('<div class="pubs_type_div"></div>');
-            div_type.append('<h5 class="pubs_type">'+map_type_hal_to_str(type)+'</h5>');
+            div_type.append('<h6 class="pubs_type">'+map_type_hal_to_str(type)+'</h6>');
             pubs_per_type.forEach(pub => {
                 let div_pub = $('<div class="pub card"></div>');
                 div_pub.append('<a class="pub_title" href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')

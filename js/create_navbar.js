@@ -1,54 +1,29 @@
-// let navbar = `
-// <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
-//     <div class="container-fluid col-md-6 mx-auto">
-
-//         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-//             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-//             <span class="navbar-toggler-icon"></span>
-//         </button>
-//         <div class="collapse navbar-collapse" id="navbarNav">
-
-//             <ul class="nav nav-pills nav-justified">
-//                 <li class="nav-item">
-//                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-//                 </li>
-//                 <li class="nav-item">
-//                     <a class="nav-link" href="#publications">Publications</a>
-//                 </li>
-//                 <li class="nav-item">
-//                     <a class="nav-link" href="#communications">Communications</a>
-//                 </li>
-//                 <li class="nav-item">
-//                     <a class="nav-link" href="#">Enseignement</a>
-//                 </li>
-//             </ul>
-
-//         </div>
-//     </div>
-// </nav>
-// `;
-
+ 
 let navbar = `
-<nav id="navbar-example2" class="navbar navbar-expand-lg fixed-top bg-body-tertiary px-3 mb-3">
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-  <a class="navbar-brand" href="#home">Home</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#publications">Publications</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#communications">Communications</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#teaching">Teaching</a>
-    </li> 
-  </ul>
-  </div>
-</nav>
+<div class="d-flex flex-sm-column flex-row flex-nowrap align-middle align-items-center sticky-top">
+    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-0 mx-0 text-center justify-content-center w-100 px-0 align-items-center">
+        <li class="nav-item">
+            <a href="#" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                <i class="bi-house fs-1"></i>
+            </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#publications">Publications</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#communications">Communications</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#teaching">Teaching</a>
+        </li> 
+    </ul>
+</div>
 `
 
+
+
+
+
+
 $("#myNavBar").append(navbar);
+

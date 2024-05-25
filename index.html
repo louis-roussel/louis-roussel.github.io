@@ -10,46 +10,53 @@
 
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/global.css" rel="stylesheet" />
+    <link href="css/sidebar.css" rel="stylesheet" />
     <link href="css/comms.css" rel="stylesheet" />
     <link href="css/pubs.css" rel="stylesheet" />
     <link href="css/enseignements.css" rel="stylesheet" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="js/utils.js"></script>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar-example2">
-    <div id="myNavBar"></div>
+    <div class="container-md">
+        <div class="row"> 
+            <div id="myNavBar" class="col-sm-3 mx-auto sticky-top">
+              
 
-    <div id="main">
-        <div id="home">
-            Louis Roussel<br>
-            PhD Student<br>
-            Equipe Calcul Formel et Haute Performance<br> 
-            louis.roussel@univ-lille.fr<br>
+            </div>
+            
+            
+            <div id="main" class="col-sm mx-auto">
+                <div id="home">
+                    <h2>Louis Roussel</h2> 
+                    PhD Student<br>
+                    
+                    louis.roussel@univ-lille.fr<br>
 
-            UMR CRIStAL<br>
-            Université de Lille - Campus scientifique<br>
-            Bâtiment ESPRIT<br>
-            Avenue Henri Poincaré<br>
-            59655 Villeneuve d'Ascq<br>
-            <p>Keywords: Computer Algebra, Computer Science, integral elimination, deep learning, NLP, Transformer
-            </p> 
-        </div>
-
-        <div id="publications">
-            <h1>Publications</h1>
-        </div>
-
-        <div id="communications">
-            <h1>Communications</h1>
-        </div>
-
-        <div id="teaching">
-            <h1>Teaching</h1>
+                    CFHP team<br> 
+                    UMR CRIStAL, Université de Lille (France) <br>
+                    <p>Keywords: Computer Algebra, Computer Science, integral elimination, deep learning, NLP, Transformer
+                    </p> 
+                </div>
+        
+                <div id="publications">
+                    <h4>Publications</h4>
+                </div>
+        
+                <div id="communications">
+                    <h4>Communications</h4>
+                </div>
+        
+                <div id="teaching">
+                    <h4>Teaching</h4>
+                </div>
+            </div>
         </div>
     </div>
 
