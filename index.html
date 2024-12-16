@@ -23,26 +23,35 @@
     <script src="js/utils.js"></script>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar-example2">
+<body>
     <div class="container-md">
-        <div class="row"> 
-            <div id="myNavBar" class="col-md-3 sticky-top">
-              
-
-            </div>
-            
-            
-            <div id="main" class="col-sm mx-auto">
-                <div id="home">
+        <div class="row">           
+            <div id="main" class="col-md mx-auto"
+                data-bs-spy="scroll" data-bs-target="#navbar"
+                data-bs-offset="0" class="scrollspy-example" tabindex="-1"> 
+                <div class="row mb-3" id="home">
                     <h2>Louis Roussel</h2> 
-                    PhD Student<br>
-                    
-                    louis.roussel@univ-lille.fr<br>
-
-                    CFHP team<br> 
-                    UMR CRIStAL, Université de Lille (France) <br>
-                    <p>Keywords: Computer Algebra, Computer Science, integral elimination, deep learning, NLP, Transformer
-                    </p> 
+                    <div class="col-3">
+                        <img
+                        class="rounded"
+                        style="width: 100%"
+                        src="/img/IMG_0162.jpg"
+                        />
+                    </div>
+                    <div class="col">
+                        
+                        PhD Student<br>
+                        
+                        louis.roussel@univ-lille.fr<br>
+    
+                        <a href="https://cfhp.univ-lille.fr/">CFHP team</a><br> 
+                        <a href="https://www.cristal.univ-lille.fr/"> 
+                        UMR CRIStAL</a>, Université de Lille (France) <br>
+                        <i>
+                            Keywords: <br>
+                            Computer Algebra, Computer Science, integral elimination, deep learning, NLP, Transformer
+                        </i> 
+                    </div>
                 </div>
                 
                 <div id="software">
@@ -87,6 +96,8 @@
     <!-- append comms to enseignements.js and use the list in create_enseignements.js -->
     <script src="js/data/enseignements.js"></script>
     <script src="js/create_enseignements.js"></script>
+
+    
 
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

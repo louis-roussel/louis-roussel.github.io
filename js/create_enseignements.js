@@ -27,7 +27,8 @@ async function create_enseignements_div() {
             let div_enseign = $('<ul class="enseign list-group"></ul>');
             const pill_total_htd =  '<span class="badge text-bg-primary rounded-pill">'+enseign.HTD+' HTD</span>';
             
-            let htd_details_list  = Object.entries(enseign.heures).filter(([key, value]) => value !== 0);
+            let htd_details_list  = Object.entries(enseign.heures).filter(
+                ([key, value]) => value !== 0);
             let htd_details = ""
             htd_details_list.forEach( ([key, value]) =>{
                 htd_details += "" + key + ": " + value + ", "; 
