@@ -97,5 +97,81 @@ const all_enseignements =  [
             "Projet":0
         }
     },
+
+
+    {
+        "title": "Bases de données relationnelles",
+        "year": 2024,
+        "study_year":"IS3",
+        "where":"Polytech Lille",
+        "HTD":8,
+        "heures":{
+            "CM":0,
+            "CTD":0,
+            "TD":8,
+            "TP":0,
+            "Projet":0
+        }
+    },
+    
+    {
+        "title": "Systèmes d'information objets",
+        "year": 2024,
+        "study_year":"IS4",
+        "where":"Polytech Lille",
+        "HTD":2,
+        "heures":{
+            "CM":0,
+            "CTD":0,
+            "TD":0,
+            "TP":2,
+            "Projet":0
+        }
+    },
+
+    {
+        "title": "Graphes",
+        "year": 2024,
+        "study_year":"IS3A",
+        "where":"Polytech Lille",
+        "HTD":16,
+        "heures":{
+            "CM":0,
+            "CTD":0,
+            "TD":16,
+            "TP":0,
+            "Projet":0
+        }
+    },
+
+    {
+        "title": "Structures de données et algorithmes",
+        "year": 2024,
+        "study_year":"IS3A",
+        "where":"Polytech Lille",
+        "HTD":18,
+        "heures":{
+            "CM":0,
+            "CTD":0,
+            "TD":0,
+            "TP":18,
+            "Projet":0
+        }
+    },
+
+    {
+        "title": "Programmation par objets",
+        "year": 2024,
+        "study_year":"IS3",
+        "where":"Polytech Lille",
+        "HTD":0,
+        "heures":{
+            "CM":0,
+            "CTD":0,
+            "TD":0,
+            "TP":0,
+            "Projet":0
+        }
+    },
 ];
   

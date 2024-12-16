@@ -12,8 +12,9 @@
     margin: 0;
 }
 
-.comm_where, .comm_conf_name{
+.comm_where, .comm_conf_name, .comm_date{
     font-style: italic;
+    font-size: small;
 }
 
 .comms_year_div{

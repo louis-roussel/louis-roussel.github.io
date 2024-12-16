@@ -41,12 +41,13 @@ function map_type_hal_to_str(type){
 
 function create_publi(pub){
     let div_pub = $('<div class="pub card"></div>');
-    div_pub.append('<a class="pub_title" href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>')
-    div_pub.append('<p class=authors>'+pub.authFullName_s.join(", ")+'</p>')
-    div_pub.append('<p class=cite_refs>'+pub.citationRef_s+'</p>')
+    const link_title = '<a class="pub_title" href="https://hal.science/'+ pub.halId_s +'">'+ pub.title_s +'</a>'
     const link_pdf = '<a href="'+pub.fileMain_s+'"><img src="img/Haltools_pdf.png"></img></a>'
     const link_bib = '<a href="https://hal.science/'+ pub.halId_s +'/bibtex"><img src="img/Haltools_bibtex3.png"></img></a>'
-    div_pub.append('<div class="links">'+ link_pdf+ link_bib +'</div>') 
+    div_pub.append('<div class="links">'+ link_title + '&nbsp;' + link_pdf + '&nbsp;' + link_bib +'</div>') 
+    div_pub.append('<p class=authors>'+pub.authFullName_s.join(", ")+'</p>')
+    div_pub.append('<p class=cite_refs>'+pub.citationRef_s+'</p>')
+    
     return div_pub;
 }
 

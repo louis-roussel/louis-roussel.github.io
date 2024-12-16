@@ -29,7 +29,7 @@ function create_comm_div(comm){
     div_comm.append('<p class = "comm_title">'+ comm.title +'</p>');
     div_comm.append('<p class = "comm_conf_name">'+ comm.conf_name +'</p>'); 
     div_comm.append('<p class = "comm_where">'+ comm.where +'</p>'); 
-    div_comm.append('<p class = "comm_where">'+ formatted_date +'</p>');
+    div_comm.append('<p class = "comm_date">'+ formatted_date +'</p>');
     return div_comm
 }
 
