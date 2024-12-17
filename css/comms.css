@@ -12,7 +12,7 @@
     margin: 0;
 }
 
-.comm_where, .comm_conf_name, .comm_date{
+.comm_details{
     font-style: italic;
     font-size: small;
 }

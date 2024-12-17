@@ -31,7 +31,7 @@
         },
         {
             "title": "Integral Equation Modelling and Deep Learning",
-            "conf_name": null,
+            "conf_name": "Séminaire",
             "conf_url":null,
             "where": "Laboratoire de Mathématiques appliquées du Havre, Le Havre (France)",
             "when": {

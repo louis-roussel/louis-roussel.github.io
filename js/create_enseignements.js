@@ -20,11 +20,11 @@ async function create_enseignements_div() {
         let year = e[0];
         let enseign_per_year = e[1];
         let div_year = $('<div class="enseign_year_div"></div>');
-        div_year.append('<h3 class="enseign_year">'+year+'</h3>');
+        div_year.append('<h3 class="enseign_year mt-3">'+year+'</h3>');
 
         enseign_per_year.forEach(enseign => {
             
-            let div_enseign = $('<ul class="enseign list-group"></ul>');
+            let div_enseign = $('<div class="enseign  mt-2"></div>');
             const pill_total_htd =  '<span class="badge text-bg-primary rounded-pill">'+enseign.HTD+' HTD</span>';
             
             let htd_details_list  = Object.entries(enseign.heures).filter(
@@ -35,14 +35,16 @@ async function create_enseignements_div() {
             })
             htd_details = htd_details.slice(0, -2);
             if (htd_details.length != 0){
-                htd_details = "(" + htd_details + ")"
+                htd_details = "(" + htd_details + ") "
             }
  
-            
-            div_enseign.append('<p class = "enseign_title">'+ enseign.title + " " + pill_total_htd +'</p>');
-            div_enseign.append('<p class = "enseign_htd">' +" "+ htd_details + '</p>');
-            div_enseign.append('<i class = "enseign_where">'+ enseign.study_year+", "+enseign.where +'</i>'); 
+            enseign_title = '<p class = "enseign_title mb-0">'+ enseign.title + " " + pill_total_htd +'</p>'
+            enseign_htd   = '<p style="display:inline" class = "enseign_htd">' +" "+ htd_details + '</p>'
+            enseign_where = '<i style="display:inline" class = "enseign_where">'+ enseign.study_year+", "+enseign.where +'</i>'
 
+            enseign_content = enseign_title + enseign_htd +enseign_where
+
+            div_enseign.append(enseign_content);  
             div_year.append(div_enseign);
         });
 

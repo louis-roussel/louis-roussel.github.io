@@ -26,10 +26,10 @@ function create_comm_div(comm){
 
     let div_comm = $('<div class="comm card"></div>');
 
-    div_comm.append('<p class = "comm_title">'+ comm.title +'</p>');
-    div_comm.append('<p class = "comm_conf_name">'+ comm.conf_name +'</p>'); 
-    div_comm.append('<p class = "comm_where">'+ comm.where +'</p>'); 
-    div_comm.append('<p class = "comm_date">'+ formatted_date +'</p>');
+    div_comm.append('<p  class = "comm_title">'+ comm.title +'</p>');
+    div_comm.append('<p  class = "comm_details">'+ 
+        comm.conf_name + " " + comm.where + " ("+ formatted_date + ")"+
+        '</p>');  
     return div_comm
 }
 
