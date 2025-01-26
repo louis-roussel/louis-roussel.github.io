@@ -27,8 +27,18 @@ function create_comm_div(comm){
     let div_comm = $('<div class="comm card"></div>');
 
     div_comm.append('<p  class = "comm_title">'+ comm.title +'</p>');
+    let conf_url_name = comm.conf_name;
+    if (comm.conf_url !== null) {
+        conf_url_name = '<a href="' + comm.conf_url + '">' + comm.conf_name + '</a>';
+    } 
+
     div_comm.append('<p  class = "comm_details">'+ 
-        comm.conf_name + " " + comm.where + " ("+ formatted_date + ")"+
+        conf_url_name + 
+        " " + 
+        comm.where + 
+        " (" + 
+        formatted_date + 
+        ")" +
         '</p>');  
     return div_comm
 }

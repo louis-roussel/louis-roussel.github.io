@@ -164,12 +164,12 @@ const all_enseignements =  [
         "year": 2024,
         "study_year":"IS3",
         "where":"Polytech Lille",
-        "HTD":0,
+        "HTD":18,
         "heures":{
             "CM":0,
             "CTD":0,
             "TD":0,
-            "TP":0,
+            "TP":18,
             "Projet":0
         }
     },
