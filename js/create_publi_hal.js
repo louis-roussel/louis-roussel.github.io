@@ -28,7 +28,8 @@ function group_pubs_by_year_type(pubs){
 function map_type_hal_to_str(type){
     let conv = {"POSTER": "Poster",
         "UNDEFINED":"Preprints, Working Papers, ...",
-        "COMM":"Conference papers"
+        "COMM":"Conference papers",
+        "ART":"Journal articles",
     };
 
     if (conv[type]){
@@ -51,18 +52,18 @@ function create_publi(pub){
     return div_pub;
 }
 
+// not used
 async function create_publications_div_year_and_type() {
     const all_data_hal = await getData(url_hal);  
     const all_pubs =all_data_hal.response.docs 
-    const all_pubs_grouped = group_pubs_by_year_type(all_pubs) 
-    console.log(all_pubs_grouped)
+    const all_pubs_grouped = group_pubs_by_year_type(all_pubs)  
     all_pubs_grouped.forEach(e => {
         let year = e[0];
         let pubs_per_year = e[1];
          
         let div_year = $('<div class="pubs_year_div"></div>');
         div_year.append('<h5 class="pubs_year">'+year+'</h5>');
-        for (const[type, pubs_per_type] of Object.entries(pubs_per_year)) { 
+        for (const[type, pubs_per_type] of Object.entries(pubs_per_year)) {
             let div_type = $('<div class="pubs_type_div"></div>');
             div_type.append('<h6 class="pubs_type">'+map_type_hal_to_str(type)+'</h6>');
             pubs_per_type.forEach(pub => {
@@ -77,10 +78,9 @@ async function create_publications_div_year_and_type() {
 async function create_publications_div_type() {
     const all_data_hal = await getData(url_hal);  
     const all_pubs =all_data_hal.response.docs 
-    let all_pubs_grouped = group_pubs_by_type(all_pubs) 
-     
-    let loop_on = ['UNDEFINED','COMM','POSTER']
-    loop_on.forEach(type => {
+    let all_pubs_grouped = group_pubs_by_type(all_pubs)  
+    let loop_on = ['UNDEFINED','ART','COMM','POSTER']
+    loop_on.forEach(type => { 
         let pubs_per_type = all_pubs_grouped[type];
         let div_type = $('<div class="pubs_type_div"></div>');
         div_type.append('<h6 class="pubs_type">'+map_type_hal_to_str(type)+'</h6>');

@@ -13,7 +13,7 @@ function dict_to_sorted_list_by_key_value(dict){
 // example : str is attr1.attr2.attr3
 function get_attribute_dict_from_str(dict, str){
     filters = str.split(".")
-    console.log(filters)
+    // console.log(filters)
     let dict_cp = dict;
     filters.forEach(filter => {
         dict_cp = dict_cp[filter]
