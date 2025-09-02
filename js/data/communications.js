@@ -185,7 +185,7 @@
         },
         {
             "title": "A Prototype for Integral Elimination (poster)",
-            "conf_name": "International Symposium on Symbolic and Algebraic Computation",
+            "conf_name": "International Symposium on Symbolic and Algebraic Computation (ISSAC)",
             "conf_url": "https://www.issac-conference.org/2024/posters.php",
             "where": "Carolina State University (Raleigh, USA)",
             "when": {
@@ -215,13 +215,43 @@
         },
         {
             "title": "Contribution to Integral Elimination",
-            "conf_name": "Computer Algebra in Scientific Computing",
+            "conf_name": "Computer Algebra in Scientific Computing (CASC)",
             "conf_url": "https://casc-conference.org/2024/index.html",
             "where": "Université de Rennes (France)",
             "when": {
                 "year": 2024,
                 "start": "2024-09-02",
                 "end": "2024-09-06"
+            },
+            "doc":{
+                "type": null,
+                "url": null
+            }
+        },  
+        {
+            "title": "Recent Advances on Integral Elimination",
+            "conf_name": "Journées Nationales de Calcul Formel 2025 (JNCF)",
+            "conf_url": "https://sourcesup.renater.fr/www/orga-jncf/index-2025.html",
+            "where": "CIRM, Luminy (France)",
+            "when": {
+                "year": 2025,
+                "start": "2025-03-11",
+                "end": null
+            },
+            "doc":{
+                "type": null,
+                "url": null
+            }
+        },  
+        {
+            "title": "Recent Advances on Integral Elimination",
+            "conf_name": "International Symposium on Symbolic and Algebraic Computation (ISSAC)",
+            "conf_url": "https://www.issac-conference.org/2025",
+            "where": " Center for Research in Mathematics, Guanajuato (Mexico)",
+            "when": {
+                "year": 2025,
+                "start": "2025-07-29",
+                "end": null
             },
             "doc":{
                 "type": null,
