@@ -12,7 +12,7 @@ async function getData(url) {
 function group_pubs_by_year(pubs){
     return group_list_by_filter(pubs, "releasedDateY_i")
 }
-function group_pubs_by_type(pubs){
+function group_pubs_by_type(pubs){ 
     return group_list_by_filter(pubs, "docType_s")
 }
 
@@ -25,11 +25,12 @@ function group_pubs_by_year_type(pubs){
     return sorted_res;
 }
 
-function map_type_hal_to_str(type){
+function map_type_hal_to_str(type){ 
     let conv = {"POSTER": "Poster",
         "UNDEFINED":"Preprints, Working Papers, ...",
         "COMM":"Conference papers",
         "ART":"Journal articles",
+        "THESE":"Thesis"
     };
 
     if (conv[type]){
@@ -76,10 +77,10 @@ async function create_publications_div_year_and_type() {
     });  
 }
 async function create_publications_div_type() {
-    const all_data_hal = await getData(url_hal);  
-    const all_pubs =all_data_hal.response.docs 
-    let all_pubs_grouped = group_pubs_by_type(all_pubs)  
-    let loop_on = ['UNDEFINED','ART','COMM','POSTER']
+    const all_data_hal = await getData(url_hal);   
+    const all_pubs =all_data_hal.response.docs   
+    let all_pubs_grouped = group_pubs_by_type(all_pubs)   
+    let loop_on = ['UNDEFINED','THESE','ART','COMM','POSTER']
     loop_on.forEach(type => { 
         let pubs_per_type = all_pubs_grouped[type];
         let div_type = $('<div class="pubs_type_div"></div>');
