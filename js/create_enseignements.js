@@ -20,7 +20,7 @@ async function create_enseignements_div() {
         let year = e[0];
         let enseign_per_year = e[1];
         let div_year = $('<div class="enseign_year_div"></div>');
-        div_year.append('<h3 class="enseign_year mt-3">'+year+'</h3>');
+        div_year.append('<h5 class="enseign_year mt-3">'+year+'</h5>');
 
         enseign_per_year.forEach(enseign => {
             
@@ -38,11 +38,11 @@ async function create_enseignements_div() {
                 htd_details = "(" + htd_details + ") "
             }
  
-            enseign_title = '<p class = "enseign_title mb-0">'+ enseign.title + " " + pill_total_htd +'</p>'
-            enseign_htd   = '<p style="display:inline" class = "enseign_htd">' +" "+ htd_details + '</p>'
+            enseign_title = '<span class = "enseign_title mb-0">'+ enseign.title +'</span>'
+            enseign_htd   = '<span style="display:inline" class = "enseign_htd">'+ htd_details + pill_total_htd + '</span>'
             enseign_where = '<i style="display:inline" class = "enseign_where">'+ enseign.study_year+", "+enseign.where +'</i>'
-
-            enseign_content = enseign_title + enseign_htd +enseign_where
+            
+            enseign_content = enseign_title + ", " + enseign_where + " " + enseign_htd 
 
             div_enseign.append(enseign_content);  
             div_year.append(div_enseign);

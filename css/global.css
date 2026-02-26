@@ -16,8 +16,17 @@ a {
     text-decoration: none !important;
   }
 
-
-
+/* #0d6efd */
+/* .section-title {
+    border-bottom: 2px dashed #000000; 
+    display: inline-block; 
+    padding-bottom: 0.3rem; 
+    margin-top: 0.2em;
+} */
+ 
+#software, #publications, #teaching, #communications{
+    margin-top: 2em;
+}
 
 @media screen and (max-width: 768px) {
     body { padding-top: 0px; }

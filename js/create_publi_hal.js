@@ -47,8 +47,7 @@ function create_publi(pub){
     const link_pdf = '<a href="'+pub.fileMain_s+'"><img src="img/Haltools_pdf.png"></img></a>'
     const link_bib = '<a href="https://hal.science/'+ pub.halId_s +'/bibtex"><img src="img/Haltools_bibtex3.png"></img></a>'
     div_pub.append('<div class="links">'+ link_title + '&nbsp;' + link_pdf + '&nbsp;' + link_bib +'</div>') 
-    div_pub.append('<p class=authors>'+pub.authFullName_s.join(", ")+'</p>')
-    div_pub.append('<p class=cite_refs>'+pub.citationRef_s+'</p>')
+    div_pub.append('<p>'+pub.authFullName_s.join(", ")+", "+pub.citationRef_s+'</p>')
     
     return div_pub;
 }
@@ -63,7 +62,7 @@ async function create_publications_div_year_and_type() {
         let pubs_per_year = e[1];
          
         let div_year = $('<div class="pubs_year_div"></div>');
-        div_year.append('<h5 class="pubs_year">'+year+'</h5>');
+        div_year.append('<h6 class="pubs_year">'+year+'</h6>');
         for (const[type, pubs_per_type] of Object.entries(pubs_per_year)) {
             let div_type = $('<div class="pubs_type_div"></div>');
             div_type.append('<h6 class="pubs_type">'+map_type_hal_to_str(type)+'</h6>');
