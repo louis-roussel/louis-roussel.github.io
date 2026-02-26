@@ -17,10 +17,11 @@ async function create_enseignements_div() {
     // $("#teaching").append("<pre>"+JSON.stringify(enseign_by_year_sorted,null,'\t')+"</pre>");  
 
     enseign_by_year_sorted.forEach(e => {
-        let year = e[0];
+        let year = parseInt(e[0]);
+        let year_plus_one = year+1;
         let enseign_per_year = e[1];
         let div_year = $('<div class="enseign_year_div"></div>');
-        div_year.append('<h5 class="enseign_year mt-3">'+year+'</h5>');
+        div_year.append('<h5 class="enseign_year mt-3">'+year+'-'+year_plus_one+'</h5>');
 
         enseign_per_year.forEach(enseign => {
             
