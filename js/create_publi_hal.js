@@ -84,11 +84,14 @@ async function create_publications_div_type() {
         let pubs_per_type = all_pubs_grouped[type];
         let div_type = $('<div class="pubs_type_div"></div>');
         div_type.append('<h6 class="pubs_type">'+map_type_hal_to_str(type)+'</h6>');
-        pubs_per_type.forEach(pub => {
-            let div_pub = create_publi(pub)
-            div_type.append(div_pub)
-            });  
-        $("#publications").append(div_type)
+        if (pubs_per_type) {
+            pubs_per_type.forEach(pub => {
+                let div_pub = create_publi(pub)
+                div_type.append(div_pub)
+                })
+            $("#publications").append(div_type)
+        };  
+        
     });     
 }
 
